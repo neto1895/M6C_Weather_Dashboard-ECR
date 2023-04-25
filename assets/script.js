@@ -56,20 +56,13 @@ function secondAPIcal(){
             return  secondResponse.json();
         })
         .then(function(data2){
-            icon_array.push(data2.weather[0].icon);
-            description_array.push(data2.weather[0].description)
-            temp_array.push(data2.main.temp);
-            wind_array.push(data2.wind.speed);
-            humidity_array.push(data2.main.humidity);
-            var i= 0
                 document.querySelector(".current_city_name").textContent = city;
-                document.querySelector(".related_pic"+i).src = "https://source.unsplash.com/random/1600x900/?"+description_array[i];
-                document.querySelector(".date_"+i).textContent = new Date();
-                document.querySelector(".icon_"+i).src = "https://openweathermap.org/img/wn/"+icon_array[i]+"@2x.png";
-                document.querySelector(".weather_description_"+i).textContent = description_array[i];
-                document.querySelector(".Temperature_"+i).textContent = temp_array[i];
-                document.querySelector(".Wind_"+i).textContent = wind_array[i];
-                document.querySelector(".Humidity_"+i).textContent = humidity_array[i];
+                document.querySelector(".date_"+0).textContent = new Date();
+                document.querySelector(".icon_"+0).src = "https://openweathermap.org/img/wn/"+data2.weather[0].icon+"@2x.png";
+                document.querySelector(".weather_description_"+0).textContent = data2.weather[0].description;
+                document.querySelector(".Temperature_"+0).textContent = data2.main.temp;
+                document.querySelector(".Wind_"+0).textContent = data2.wind.speed;
+                document.querySelector(".Humidity_"+0).textContent = data2.main.humidity;
 
         })
 }
@@ -83,24 +76,16 @@ function fiveDaysForecast(){
             return  secondResponse.json();
         })
         .then(function(data3){
+
             for (var i = 3; i < data3.list.length; i ++){
-                date_array.push(data3.list[i].dt_txt);
-                icon_array.push(data3.list[i].weather[0].icon);
-                description_array.push(data3.list[i].weather[0].description);
-                temp_array.push(data3.list[i].main.temp);
-                wind_array.push(data3.list[i].wind.speed);
-                humidity_array.push(data3.list[i].main.humidity);
-                i = i+7;
-            }
-            for (var i= 1; i < date_array.length; i++){
                 document.querySelector(".current_city_name").textContent = city;
-                document.querySelector(".related_pic"+i).src = "https://source.unsplash.com/random/1600x900/?"+description_array[i];
-                document.querySelector(".date_"+i).textContent = date_array[i];
-                document.querySelector(".icon_"+i).src = "https://openweathermap.org/img/wn/"+icon_array[i]+"@2x.png";
-                document.querySelector(".weather_description_"+i).textContent = description_array[i];
-                document.querySelector(".Temperature_"+i).textContent = temp_array[i];
-                document.querySelector(".Wind_"+i).textContent = wind_array[i];
-                document.querySelector(".Humidity_"+i).textContent = humidity_array[i];
+                document.querySelector(".date_"+i).textContent = data3.list[i].dt_txt;
+                document.querySelector(".icon_"+i).src = "https://openweathermap.org/img/wn/"+data3.list[i].weather[0].icon+"@2x.png";
+                document.querySelector(".weather_description_"+i).textContent = data3.list[i].weather[0].description;
+                document.querySelector(".Temperature_"+i).textContent = data3.list[i].main.temp;
+                document.querySelector(".Wind_"+i).textContent = data3.list[i].wind.speed;
+                document.querySelector(".Humidity_"+i).textContent = data3.list[i].main.humidity;
+                i = i+7;
             }
         })
 }
@@ -127,13 +112,13 @@ function search_city_list(city_clicked){
 
 function search_city(){
     city = document.getElementById("CityInput").value
+    createBtn();
     Main_call();
 }
 
 document.querySelector(".submit_city").addEventListener("click",search_city);
 
 function Main_call(){
-    createBtn();
     geoCODE_call();
     update_weather();
 }
