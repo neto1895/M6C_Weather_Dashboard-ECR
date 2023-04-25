@@ -8,33 +8,27 @@ function geoCODE_call(queryURL){
     var queryURL ="http://api.openweathermap.org/geo/1.0/direct?q="+city+"&appid="+APIkey;
     fetch(queryURL)
         .then(function (response) {
-            console.log(response);
             return response.json();
         })
         .then(function(data) {
-            console.log('GeoCODING response:')
-            console.log(data);
             city = data[0].name;
             latitude = data[0].lat;
-            console.log(latitude);
             longitude = data[0].lon;
-            console.log(longitude);
         })
         .then(secondAPIcal)
         .then(fiveDaysForecast)
     }
     function secondAPIcal(){
         var QueryURL_current = "http://api.openweathermap.org/data/2.5/weather?lat="+latitude+"&lon="+longitude + "&appid=" + APIkey + "&units=metric";
-            console.log(QueryURL_current);
         fetch(QueryURL_current)
             .then(function(secondResponse) {
-                console.log(secondResponse);
                 return  secondResponse.json();
             })
             .then(function(data2){
+                    document.querySelector(".city_pic").src = "https://source.unsplash.com/random/1600x900/?city%20"+city;
                     document.querySelector(".current_city_name").textContent = city;
                     document.querySelector(".date_"+0).textContent = new Date();
-                    document.querySelector(".icon_"+0).src = "https://openweathermap.org/img/wn/"+data2.weather[0].icon+"@2x.png";
+                    document.querySelector(".icon_0").src = "https://openweathermap.org/img/wn/"+data2.weather[0].icon+"@2x.png";
                     document.querySelector(".weather_description_"+0).textContent = data2.weather[0].description;
                     document.querySelector(".Temperature_"+0).textContent = data2.main.temp;
                     document.querySelector(".Wind_"+0).textContent = data2.wind.speed;
@@ -43,7 +37,6 @@ function geoCODE_call(queryURL){
     }
     function fiveDaysForecast(){
         var QueryURL_5 = "http://api.openweathermap.org/data/2.5/forecast?lat="+latitude+"&lon="+longitude + "&appid=" + APIkey + "&units=metric";
-            console.log(QueryURL_5);
         fetch(QueryURL_5)
             .then(function(secondResponse) {
                 return  secondResponse.json();

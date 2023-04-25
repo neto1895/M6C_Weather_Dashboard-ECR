@@ -18,23 +18,29 @@
             <div class="row align-items-start">
               <section class="col-3 p-3 mb-2">
                 <h2>Search for a City:</h2>
-                <div>
+                <div class="d-flex flex-column">
                     <input class="form-control" list="datalistOptions" id="CityInput" placeholder="Type to search...">
                     <br>
-                    <button type="button" class="btn btn-primary btn-lg submit_city">Primary</button><br><br>  
+                    <button type="button" class="btn btn-primary btn-lg submit_city">Search</button><br><br>  
                 </div>
-                <div class="city_container">
+                <div class="city_container d-flex flex-column">
                 </div>
               </section>
               <section class="col-sm-9 p-3">
-                <div >
-                    <h3 class="current_city_name">City's name</h3>
-                    <h5 class="card-title date_0">Date</h5>
-                    <img src="https://openweathermap.org/img/wn/01d@2x.png" class="icon_0" alt="weather_description_0">
-                    <p class="weather_description_0">Weather description</p>
-                    <p class="Temperature_0">Temperature</p>
-                    <p class="Wind_0">Wind</p>
-                    <p class="Humidity_0">Humidity</p>
+                <div class="row">
+                    <div class="col-sm">
+                        <h3 class="current_city_name text-start">City's name </h3>
+                        <img src="https://openweathermap.org/img/wn/01d@2x.png" class="icon_0" alt="weather_description_0">
+                        <h5 class="card-title date_0 text-start">Date </h5>
+                        
+                        <p class="weather_description_0 text-start">Weather description</p>
+                        <p class="Temperature_0 text-start">Temperature</p>
+                        <p class="Wind_0 text-start">Wind</p>
+                        <p class="Humidity_0 text-start">Humidity</p>
+                    </div>
+                    <div class="col-sm image-container">
+                        <img src="https://images.unsplash.com/photo-1452838269443-c86e6a3134f9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fG1leGljbyUyMGNpdHl8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60" class="city_pic rounded">
+                    </div>
                 </div>
                 <div>
                     <h4>5-Day Forecast</h4>
