@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Weather Dashboard - Challenge Module 6</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./assets/style.css" />
+</head>
+
+<body>
+    <header>
+      <h1>Weather Dashboard</h1>
+    </header>
+  
+    <main>
+        <div class="container text-center">
+            <div class="row align-items-start">
+              <section class="col-3 p-3 mb-2">
+                <h2>Search for a City:</h2>
+                <div>
+                    <input class="form-control" list="datalistOptions" id="CityInput" placeholder="Type to search...">
+                    <br>
+                    <button type="button" class="btn btn-primary btn-lg submit_city">Primary</button><br><br>  
+                </div>
+                <div class="city_container">
+
+                </div>
+              </section>
+              <section class="col-sm-9 p-3">
+                <div >
+                    <h3 class="current_city_name">City's name</h3>
+                    <h5 class="card-title date_0">Date</h5>
+                    <img src="https://openweathermap.org/img/wn/01d@2x.png" class="icon_0" alt="weather_description_0">
+                    <p class="weather_description_0">Weather description</p>
+                    <p class="Temperature_0">Temperature</p>
+                    <p class="Wind_0">Wind</p>
+                    <p class="Humidity_0">Humidity</p>
+                </div>
+                <div>
+                    <h4>5-Day Forecast</h4>
+                    <div class="card-group">
+                        <div class="card">
+                          <div class="card-body">
+                            <h5 class="card-title date_1">Date</h5>
+                            <img src="https://openweathermap.org/img/wn/01d@2x.png" class="icon_1" alt="weather_description_1">
+                            <p class="weather_description_1">Weather description</p>
+                            <p class="Temperature_1">Temperature</p>
+                            <p class="Wind_1">Wind</p>
+                            <p class="Humidity_1">Humidity</p>
+                          </div>
+
+                        </div>
+                        <div class="card">
+                          <div class="card-body">
+                            <h5 class="card-title date_2">Date</h5>
+                            <img src="https://openweathermap.org/img/wn/01d@2x.png" class="icon_2" alt="weather_description_2">
+                            <p class="weather_description_2">Weather description</p>
+                            <p class="Temperature_2">Temperature</p>
+                            <p class="Wind_2">Wind</p>
+                            <p class="Humidity_2">Humidity</p>
+                          </div>
+
+                        </div>
+                        <div class="card">
+                          <div class="card-body">
+                            <h5 class="card-title date_3">Date</h5>
+                            <img src="https://openweathermap.org/img/wn/01d@2x.png" class="icon_3" alt="weather_description_3">
+                            <p class="weather_description_3">Weather description</p>
+                            <p class="Temperature_3">Temperature</p>
+                            <p class="Wind_3">Wind</p>
+                            <p class="Humidity_3">Humidity</p>
+                          </div>
+
+                        </div>
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title date_4">Date</h5>
+                                <img src="https://openweathermap.org/img/wn/01d@2x.png" class="icon_4" alt="weather_description_4">
+                                <p class="weather_description_4">Weather description</p>
+                                <p class="Temperature_4">Temperature</p>
+                                <p class="Wind_4">Wind</p>
+                                <p class="Humidity_4">Humidity</p>
+                              </div>
+
+                          </div>
+                          <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title date_5">Date</h5>
+                                <img src="https://openweathermap.org/img/wn/01d@2x.png" class="icon_5" alt="weather_description_5">
+                                <p class="weather_description_5">Weather description</p>
+                                <p class="Temperature_5">Temperature</p>
+                                <p class="Wind_5">Wind</p>
+                                <p class="Humidity_5">Humidity</p>
+                              </div>
+
+                          </div>
+                      </div>
+                </div>
+              </section>
+            </div>
+          </div>
+    </main>
+
+    <script src="./assets/script.js"></script>
+  </body>
+  
+  </html>
