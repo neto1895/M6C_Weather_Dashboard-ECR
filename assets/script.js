@@ -30,9 +30,9 @@ function geoCODE_call(queryURL){
                     document.querySelector(".date_"+0).textContent = new Date();
                     document.querySelector(".icon_0").src = "https://openweathermap.org/img/wn/"+data2.weather[0].icon+"@2x.png";
                     document.querySelector(".weather_description_"+0).textContent = data2.weather[0].description;
-                    document.querySelector(".Temperature_"+0).textContent = data2.main.temp;
-                    document.querySelector(".Wind_"+0).textContent = data2.wind.speed;
-                    document.querySelector(".Humidity_"+0).textContent = data2.main.humidity;
+                    document.querySelector(".Temperature_"+0).textContent = "Temp: " +data2.main.temp+"  °C";
+                    document.querySelector(".Wind_"+0).textContent = "Wind: "+data2.wind.speed+"  m/sec";
+                    document.querySelector(".Humidity_"+0).textContent = "Humidity: "+data2.main.humidity+"  %";
             })
     }
     function fiveDaysForecast(){
@@ -47,9 +47,9 @@ function geoCODE_call(queryURL){
                     document.querySelector(".date_"+i).textContent = data3.list[i].dt_txt;
                     document.querySelector(".icon_"+i).src = "https://openweathermap.org/img/wn/"+data3.list[i].weather[0].icon+"@2x.png";
                     document.querySelector(".weather_description_"+i).textContent = data3.list[i].weather[0].description;
-                    document.querySelector(".Temperature_"+i).textContent = data3.list[i].main.temp;
-                    document.querySelector(".Wind_"+i).textContent = data3.list[i].wind.speed;
-                    document.querySelector(".Humidity_"+i).textContent = data3.list[i].main.humidity;
+                    document.querySelector(".Temperature_"+i).textContent = "Temp: " +data3.list[i].main.temp+"  °C";
+                    document.querySelector(".Wind_"+i).textContent = "Wind: "+data3.list[i].wind.speed+"  m/sec";
+                    document.querySelector(".Humidity_"+i).textContent = "Humidity: "+data3.list[i].main.humidity+"  %";
                     i = i+7;
                 }
             })
@@ -78,5 +78,13 @@ function search_city(){
     createBtn();
     geoCODE_call();
 }
+
+function init(){
+    createBtn();
+    geoCODE_call();
+}
+
+init();
+
 
 document.querySelector(".submit_city").addEventListener("click",search_city);
