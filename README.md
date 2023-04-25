@@ -14,6 +14,7 @@ The following image shows the application first look and functionality. The func
 ![Quiz page demo](./assets/images/deployedpage.gif)
 
 
+
 ## Usage
 
 To use the weather dashboard, simply type the name of a city into the search bar and click the "search" button. The dashboard will retrieve the current weather data and a 5-day forecast for the specified city and display it on the screen. Additionally, the dashboard will generate a new button for the searched city, allowing you to quickly access its weather data in the future without having to type the city name again. Simply click on the button corresponding to the city you want to view, and the dashboard will display the weather data for that city.
@@ -25,7 +26,7 @@ N/A
 
 ## Credits
 
-This code is made by Ernesto Cruz using the openweather API 
+This code is made by Ernesto Cruz using the openweather API.
 
 ## License
 
